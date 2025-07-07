@@ -1,0 +1,471 @@
+/* ========== RESET E CONFIGURAÇÕES GLOBAIS ========== */
+/* Remove margens e paddings padrão do navegador */
+html, body {
+    height: 100%; /* Garante que ocupem 100% da altura da tela */
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove padding padrão */
+}
+
+/* Configurações globais do corpo da página */
+body {
+    color: whitesmoke; /* Cor do texto: branco acinzentado */
+    background-color: rgb(37, 36, 39); /* Fundo escuro (cinza escuro) */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte padrão com fallbacks */
+}
+
+/* ========== LAYOUT PRINCIPAL ========== */
+/* Container principal que estrutura toda a página */
+.container {
+    min-height: 100vh; /* Altura mínima de 100% da viewport */
+    display: flex; /* Usa flexbox para layout */
+    flex-direction: column; /* Organiza elementos em coluna */
+    padding: 0 50px; /* Padding lateral de 50px */
+}
+
+/* Área principal que cresce para empurrar o rodapé para baixo */
+main {
+    flex: 1; /* Ocupa todo o espaço disponível */
+}
+
+/* Classe utilitária para centralizar conteúdo */
+.center {
+    text-align: center; /* Centraliza texto horizontalmente */
+}
+
+/* ========== TIPOGRAFIA ========== */
+/* Títulos principais com cor de destaque */
+h1 {
+    color: #e7a730; /* Cor dourada/amarelada para títulos */
+}
+
+/* Links em geral */
+a {
+    color: whitesmoke; /* Cor padrão dos links */
+    text-decoration: none; /* Remove sublinhado padrão */
+}
+
+/* ========== NAVEGAÇÃO ========== */
+/* Container principal da navegação */
+nav {
+    font-size: 20px; /* Tamanho da fonte da navegação */
+}
+
+/* Lista de navegação */
+nav ul {
+    display: flex; /* Organiza itens em linha */
+    justify-content: space-between; /* Distribui espaço igualmente */
+    list-style-type: none; /* Remove marcadores de lista */
+    align-items: center; /* Alinha verticalmente ao centro */
+    padding: 16px; /* Espaçamento interno */
+}
+
+/* Links da navegação */
+nav a {
+    font-size: 20px; /* Tamanho da fonte dos links */
+    transition: color 0.3s ease; /* Transição suave na mudança de cor */
+}
+
+/* Efeito hover nos links da navegação */
+nav a:hover {
+    color: #e7a730; /* Muda para cor dourada ao passar o mouse */
+}
+
+/* ========== LISTAS GERAIS ========== */
+/* Estilo padrão para listas não-navegação */
+ul {
+    display: flex; /* Organiza itens em linha */
+    justify-content: space-between; /* Distribui espaço igualmente */
+    list-style-type: none; /* Remove marcadores de lista */
+    align-items: center; /* Alinha verticalmente ao centro */
+    padding: 16px; /* Espaçamento interno */
+}
+
+/* ========== IMAGENS ========== */
+/* Estilo padrão para imagens (principalmente foto de perfil) */
+img {
+    width: 150px; /* Largura fixa */
+    height: 150px; /* Altura fixa */
+    border-radius: 50%; /* Torna a imagem circular */
+    border: 5px solid #e7a730; /* Borda dourada de 5px */
+}
+
+/* ========== RODAPÉ ========== */
+/* Container principal do rodapé */
+footer {
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+/* Links do rodapé */
+footer a {
+    margin: 20px; /* Margem de 20px em todos os lados */
+    text-align: center; /* Centraliza texto */
+}
+
+/* Imagens do rodapé (ícones sociais) */
+footer img {
+    width: 40px; /* Largura menor para ícones */
+    height: 40px; /* Altura menor para ícones */
+}
+
+/* Texto do rodapé */
+footer p {
+    margin-top: 3px; /* Pequena margem superior */
+}
+
+/* ========== FORMULÁRIOS ========== */
+/* Container principal dos formulários */
+form {
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Organiza campos em coluna */
+    gap: 12px; /* Espaço de 12px entre elementos */
+    max-width: 500px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px 0; /* Padding vertical */
+}
+
+/* Campos de entrada (input e textarea) */
+form input,
+form textarea {
+    padding: 10px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px; /* Cantos arredondados */
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+/* Botão do formulário */
+form button {
+    background-color: #e7a730; /* Fundo dourado */
+    color: #222; /* Texto escuro */
+    padding: 10px; /* Espaçamento interno */
+    font-weight: bold; /* Texto em negrito */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Cursor de mão ao passar sobre */
+    transition: background-color 0.3s ease; /* Transição suave no fundo */
+}
+
+/* Efeito hover no botão */
+form button:hover {
+    background-color: #cf961a; /* Fundo dourado mais escuro */
+}
+
+/* ========== LAYOUT DE CARDS PARA FORMAÇÃO ========== */
+/* Container principal da seção de formação */
+.formacao-section {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 20px; /* Espaço entre os cards */
+    margin: 20px 0; /* Margem vertical */
+}
+
+/* Estilo individual dos cards */
+.card {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%); /* Gradiente escuro */
+    border-radius: 15px; /* Cantos bem arredondados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra profunda */
+    overflow: hidden; /* Esconde conteúdo que sai do card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+    border: 1px solid #3a3a3a; /* Borda sutil */
+}
+
+/* Efeito hover nos cards */
+.card:hover {
+    transform: translateY(-10px); /* Levanta o card */
+    box-shadow: 0 20px 40px rgba(231, 167, 48, 0.2); /* Sombra dourada */
+}
+
+/* Cabeçalho do card */
+.card-header {
+    background: linear-gradient(135deg, #e7a730 0%, #cf961a 100%); /* Gradiente dourado */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Para posicionamento de elementos filhos */
+}
+
+.card-header::after {
+    content: ''; /* Pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 0; /* Fixa na parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta posição central */
+    width: 80%; /* Largura da linha */
+    height: 2px; /* Altura da linha */
+    background: rgba(255, 255, 255, 0.3); /* Linha semitransparente */
+}
+
+/* Títulos dos cards */
+.card-header h2 {
+    margin: 0; /* Remove margem padrão */
+    color: #222; /* Cor escura para contraste */
+    font-size: 1.5em; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra no texto */
+}
+
+/* Conteúdo do card */
+.card-content {
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Listas dentro dos cards */
+.card-content ul {
+    display: block; /* Volta ao comportamento normal de lista */
+    justify-content: normal; /* Remove justificação */
+    list-style: none; /* Remove marcadores */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margem */
+}
+
+/* Itens da lista nos cards */
+.card-content li {
+    padding: 12px 0; /* Espaçamento vertical */
+    border-bottom: 1px solid #3a3a3a; /* Linha divisória */
+    color: #e0e0e0; /* Cor clara */
+    font-size: 1.1em; /* Tamanho da fonte */
+    position: relative; /* Para posicionamento do ícone */
+    padding-left: 25px; /* Espaço para o ícone */
+    transition: color 0.3s ease; /* Transição suave */
+}
+
+/* Remove a linha do último item */
+.card-content li:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+/* Ícone antes de cada item da lista */
+.card-content li::before {
+    content: '▶'; /* Ícone de seta */
+    color: #e7a730; /* Cor dourada */
+    font-size: 0.8em; /* Tamanho menor */
+    position: absolute; /* Posicionamento absoluto */
+    left: 0; /* Alinha à esquerda */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta posição vertical */
+}
+
+/* Efeito hover nos itens da lista */
+.card-content li:hover {
+    color: #e7a730; /* Muda cor ao passar o mouse */
+    padding-left: 30px; /* Aumenta o espaço à esquerda */
+}
+
+/* ========== RESPONSIVIDADE ========== */
+/* Para tablets */
+@media (max-width: 768px) {
+    .formacao-section {
+        grid-template-columns: 1fr; /* Uma coluna em tablets */
+        gap: 15px; /* Espaço menor */
+    }
+    
+    .card-header h2 {
+        font-size: 1.3em; /* Fonte menor */
+    }
+    
+    .card-content li {
+        font-size: 1em; /* Fonte menor */
+    }
+}
+
+/* Para celulares */
+@media (max-width: 480px) {
+    .card-header {
+        padding: 15px; /* Padding menor */
+    }
+    
+    .card-content {
+        padding: 15px; /* Padding menor */
+    }
+    
+    .card-content li {
+        padding: 10px 0; /* Espaçamento menor */
+        font-size: 0.95em; /* Fonte menor */
+    }
+}
+
+/* ========== LAYOUT DE CARDS PARA PORTFÓLIO ========== */
+/* Container principal da seção de portfólio */
+.portfolio-section {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Colunas responsivas */
+    gap: 20px; /* Espaço entre os cards */
+    margin: 20px 0; /* Margem vertical */
+}
+
+/* Estilo individual dos cards do portfólio */
+.portfolio-section .card {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%); /* Gradiente escuro */
+    border-radius: 15px; /* Cantos bem arredondados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra profunda */
+    overflow: hidden; /* Esconde conteúdo que sai do card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+    border: 1px solid #3a3a3a; /* Borda sutil */
+}
+
+/* Efeito hover nos cards do portfólio */
+.portfolio-section .card:hover {
+    transform: translateY(-10px); /* Levanta o card */
+    box-shadow: 0 20px 40px rgba(231, 167, 48, 0.2); /* Sombra dourada */
+}
+
+/* Cabeçalho do card do portfólio */
+.portfolio-section .card-header {
+    background: linear-gradient(135deg, #e7a730 0%, #cf961a 100%); /* Gradiente dourado */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    position: relative; /* Para posicionamento de elementos filhos */
+}
+
+.portfolio-section .card-header::after {
+    content: ''; /* Pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto */
+    bottom: 0; /* Fixa na parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta posição central */
+    width: 80%; /* Largura da linha */
+    height: 2px; /* Altura da linha */
+    background: rgba(255, 255, 255, 0.3); /* Linha semitransparente */
+}
+
+/* Títulos dos cards do portfólio */
+.portfolio-section .card-header h2 {
+    margin: 0; /* Remove margem padrão */
+    color: #222; /* Cor escura para contraste */
+    font-size: 1.5em; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra no texto */
+}
+
+/* Conteúdo do card do portfólio */
+.portfolio-section .card-content {
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* ========== ITENS DE PROJETO ========== */
+/* Container individual de cada projeto */
+.project-item {
+    background: rgba(255, 255, 255, 0.05); /* Fundo levemente transparente */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 20px; /* Espaçamento interno */
+    margin-bottom: 15px; /* Espaço entre projetos */
+    border: 1px solid #3a3a3a; /* Borda sutil */
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+/* Efeito hover no item do projeto */
+.project-item:hover {
+    background: rgba(231, 167, 48, 0.1); /* Fundo dourado transparente */
+    border-color: #e7a730; /* Borda dourada */
+    transform: translateX(5px); /* Move levemente para direita */
+}
+
+/* Remove margem do último item */
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Título do projeto */
+.project-item h3 {
+    color: #e7a730; /* Cor dourada */
+    margin: 0 0 10px 0; /* Margem apenas abaixo */
+    font-size: 1.3em; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+}
+
+/* Descrição do projeto */
+.project-item p {
+    color: #b0b0b0; /* Cor acinzentada */
+    margin: 0 0 15px 0; /* Margem apenas abaixo */
+    line-height: 1.5; /* Altura da linha */
+    font-size: 0.95em; /* Tamanho da fonte */
+}
+
+/* ========== LINKS DOS PROJETOS ========== */
+/* Link do projeto */
+.project-link {
+    display: inline-flex; /* Flex em linha */
+    align-items: center; /* Alinha verticalmente */
+    gap: 8px; /* Espaço entre texto e ícone */
+    background: linear-gradient(135deg, #e7a730 0%, #cf961a 100%); /* Gradiente dourado */
+    color: #222; /* Cor escura */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 25px; /* Cantos bem arredondados */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold; /* Negrito */
+    font-size: 0.9em; /* Tamanho da fonte */
+    transition: all 0.3s ease; /* Transição suave */
+    box-shadow: 0 4px 15px rgba(231, 167, 48, 0.3); /* Sombra dourada */
+}
+
+/* Efeito hover no link do projeto */
+.project-link:hover {
+    background: linear-gradient(135deg, #cf961a 0%, #b8851a 100%); /* Gradiente mais escuro */
+    transform: translateY(-2px); /* Levanta o botão */
+    box-shadow: 0 8px 25px rgba(231, 167, 48, 0.4); /* Sombra mais intensa */
+}
+
+/* Ícone do link */
+.project-link svg {
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+/* Animação do ícone no hover */
+.project-link:hover svg {
+    transform: rotate(360deg); /* Rotação completa */
+}
+
+/* ========== RESPONSIVIDADE PARA PORTFÓLIO ========== */
+/* Para tablets */
+@media (max-width: 768px) {
+    .portfolio-section {
+        grid-template-columns: 1fr; /* Uma coluna em tablets */
+        gap: 15px; /* Espaço menor */
+    }
+    
+    .portfolio-section .card-header h2 {
+        font-size: 1.3em; /* Fonte menor */
+    }
+    
+    .project-item h3 {
+        font-size: 1.2em; /* Fonte menor */
+    }
+    
+    .project-item p {
+        font-size: 0.9em; /* Fonte menor */
+    }
+}
+
+/* Para celulares */
+@media (max-width: 480px) {
+    .portfolio-section {
+        grid-template-columns: 1fr; /* Uma coluna */
+        gap: 10px; /* Espaço menor */
+    }
+    
+    .portfolio-section .card-header {
+        padding: 15px; /* Padding menor */
+    }
+    
+    .portfolio-section .card-content {
+        padding: 15px; /* Padding menor */
+    }
+    
+    .project-item {
+        padding: 15px; /* Padding menor */
+        margin-bottom: 10px; /* Espaço menor */
+    }
+    
+    .project-item h3 {
+        font-size: 1.1em; /* Fonte menor */
+    }
+    
+    .project-item p {
+        font-size: 0.85em; /* Fonte menor */
+    }
+    
+    .project-link {
+        padding: 8px 12px; /* Padding menor */
+        font-size: 0.85em; /* Fonte menor */
+    }
+}
